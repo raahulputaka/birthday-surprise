@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Little Birthday Surprise ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="envelopeIntro">
+  <div class="envelope-content">
+    <p class="envelope-small">A LITTLE SURPRISE FOR YOU</p>
+
+    <div class="envelope" id="envelope">
+      <div class="letter">
+        <span>Happy<br>Birthday ✨</span>
+      </div>
+
+      <div class="envelope-back"></div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+    </div>
+
+    <p class="open-text">Open Me 💌</p>
+    <button id="openEnvelope" class="primary">Open the Letter ✨</button>
+  </div>
+</div>
+<div id="balloons" aria-hidden="true"></div><div id="confetti"></div>
+
+<div id="app">
+  <section class="page active hero card" data-page="0">
+    <div class="sparkles">✦　✧　✦</div>
+    <p class="eyebrow">A tiny surprise</p>
+    <h1>Happy Birthday!</h1>
+    <p class="script">Today is all about you ✨</p>
+    <p class="intro">A little page for a beautiful day, filled with wishes, smiles and one special celebration.</p>
+    <button class="primary next" data-next="1">Open Your Surprise 🎁</button>
+  </section>
+
+  <section class="page card" data-page="1">
+    <div class="wish">
+      <div class="badge">♡</div><p class="eyebrow">A LITTLE WISH</p>
+      <h2>For a Wonderful Birthday</h2>
+      <p>May your day be filled with the kind of happiness that stays long after the candles go out. May the coming year bring you beautiful memories, peaceful moments, exciting adventures and plenty of reasons to smile.</p>
+      <p class="script big">Keep shining, keep smiling, keep being you 💙</p>
+    </div>
+    <button class="primary next" data-next="2">Let’s Celebrate 🎈</button>
+  </section>
+
+  <section class="page card" data-page="2">
+    <p class="eyebrow">THE CAKE CUTTING</p><h2>Make a Birthday Wish</h2>
+    <p class="hint">Tap the candles to blow them out, then cut the cake.</p>
+    <div class="cake-wrap"><div class="cake">
+      <div class="candle c1"><span class="flame"></span></div><div class="candle c2"><span class="flame"></span></div><div class="candle c3"><span class="flame"></span></div>
+      <div class="cake-top"></div><div class="icing"></div><div class="cake-body"></div><div class="plate"></div>
+    </div></div>
+    <button id="candlesBtn" class="secondary">Blow Out Candles 🕯️</button>
+    <button id="cutBtn" class="primary hidden">Cut the Cake 🎂</button>
+    <p id="cakeMessage" class="cake-message"></p>
+    <button id="afterCake" class="primary hidden">One More Surprise ✨</button>
+  </section>
+
+  <!-- =========================
+     MAKE A WISH SCENE
+========================= -->
+
+<section class="page wish-page">
+
+  <div class="wish-scene">
+
+    <!-- Moon -->
+    <div class="moon">
+      <div class="moon-crater crater1"></div>
+      <div class="moon-crater crater2"></div>
+      <div class="moon-crater crater3"></div>
+      <div class="moon-crater crater4"></div>
+    </div>
+
+
+    <!-- Stars -->
+    <div class="stars">
+      <span>✦</span>
+      <span>✧</span>
+      <span>✦</span>
+      <span>✧</span>
+      <span>·</span>
+      <span>✦</span>
+      <span>·</span>
+      <span>✧</span>
+    </div>
+
+
+    <!-- Clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+
+    <!-- Scene title -->
+    <div class="wish-title">
+      <p>MAKE A LITTLE WISH</p>
+
+      <h2>
+        Close your eyes...
+        <br>
+        and make a wish ✨
+      </h2>
+    </div>
+
+
+    <!-- Vector landscape -->
+    <svg
+      class="wish-landscape"
+      viewBox="0 0 1440 700"
+      preserveAspectRatio="xMidYMax slice"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <!-- distant hills -->
+      <path
+        d="M0 510
+           C180 430 280 470 420 400
+           C560 330 690 430 820 390
+           C970 340 1080 410 1200 350
+           C1320 300 1380 350 1440 320
+           L1440 700
+           L0 700 Z"
+      />
+
+      <!-- foreground hill -->
+      <path
+        d="M0 570
+           C220 500 360 550 520 500
+           C700 440 850 530 1000 470
+           C1160 410 1300 470 1440 420
+           L1440 700
+           L0 700 Z"
+      />
+
+      <!-- tree left -->
+      <g class="wish-tree">
+
+        <rect
+          x="175"
+          y="390"
+          width="28"
+          height="210"
+          rx="10"
+        />
+
+        <circle cx="190" cy="350" r="75"/>
+        <circle cx="130" cy="390" r="60"/>
+        <circle cx="250" cy="390" r="65"/>
+
+        <path
+          d="M190 440
+             C150 400 125 370 105 330"
+          fill="none"
+          stroke-width="14"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M190 445
+             C230 410 260 380 285 335"
+          fill="none"
+          stroke-width="14"
+          stroke-linecap="round"
+        />
+
+      </g>
+
+
+      <!-- small tree right -->
+      <g class="wish-tree small-tree">
+
+        <rect
+          x="1190"
+          y="460"
+          width="20"
+          height="150"
+          rx="8"
+        />
+
+        <circle cx="1200" cy="425" r="58"/>
+        <circle cx="1155" cy="455" r="45"/>
+        <circle cx="1245" cy="455" r="48"/>
+
+      </g>
+
+
+      <!-- small house -->
+      <g class="wish-house">
+
+        <rect
+          x="650"
+          y="470"
+          width="180"
+          height="120"
+          rx="5"
+        />
+
+        <!-- roof -->
+        <path
+          d="M620 475 L740 380 L860 475 Z"
+        />
+
+        <!-- door -->
+        <rect
+          x="720"
+          y="515"
+          width="40"
+          height="75"
+          rx="4"
+        />
+
+        <!-- windows -->
+        <rect
+          x="675"
+          y="505"
+          width="30"
+          height="30"
+          rx="3"
+        />
+
+        <rect
+          x="795"
+          y="505"
+          width="30"
+          height="30"
+          rx="3"
+        />
+
+        <!-- warm window glow -->
+        <circle
+          cx="690"
+          cy="520"
+          r="10"
+          class="window-glow"
+        />
+
+        <circle
+          cx="810"
+          cy="520"
+          r="10"
+          class="window-glow"
+        />
+
+      </g>
+
+
+      <!-- little path -->
+      <path
+        class="wish-path"
+        d="M740 590
+           C720 620 700 650 680 700
+           L800 700
+           C780 650 760 620 740 590 Z"
+      />
+
+    </svg>
+
+
+    <!-- Falling star -->
+    <div id="shootingStar" class="shooting-star">
+      <span>✦</span>
+    </div>
+
+
+    <!-- Wish button -->
+    <button
+      id="wishBtn"
+      class="wish-button"
+    >
+      Make a Wish ✨
+    </button>
+
+
+    <!-- Wish completed -->
+    <div
+      id="wishComplete"
+      class="wish-complete hidden"
+    >
+      <span>✦</span>
+
+      <p>
+        Your wish has been sent to the stars.
+      </p>
+    </div>
+
+
+    <!-- Zoom button -->
+    <button
+      id="seeYourself"
+      class="see-yourself hidden"
+    >
+      Click to see yourself 🌙
+    </button>
+
+
+    <!-- Moon zoom overlay -->
+    <div
+      id="moonZoom"
+      class="moon-zoom"
+    >
+
+      <div class="zoom-moon">
+
+        <div class="zoom-crater zc1"></div>
+        <div class="zoom-crater zc2"></div>
+        <div class="zoom-crater zc3"></div>
+        <div class="zoom-crater zc4"></div>
+
+      </div>
+
+      <div class="zoom-message">
+        <span>✨</span>
+        <p>
+          Sometimes,
+          <br>
+          the most beautiful wishes
+          <br>
+          begin with simply believing.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <section class="page scene-page" data-page="3">
+    <div class="sun sun1"></div><div class="sun sun2"></div>
+    <div class="cloud cl1"></div><div class="cloud cl2"></div>
+    <div class="scene-title"><span>After the cake...</span><h2>A little something for you</h2></div>
+    <svg class="tree-scene" viewBox="0 0 1000 650" aria-label="Black vector boy sitting on a tree branch at sunset">
+      <path d="M80 650 C180 530 190 350 230 190 C260 90 330 55 390 0 L460 0 C365 105 330 185 335 285 C340 390 300 515 240 650Z" fill="#090909"/>
+      <path d="M175 350 C350 320 520 350 760 420 C850 447 930 455 1000 445 L1000 505 C850 520 720 495 590 460 C410 410 285 390 135 415Z" fill="#090909"/>
+      <path d="M245 230 C165 135 90 135 25 185 L10 150 C110 50 220 75 305 170Z" fill="#090909"/>
+      <path d="M300 155 C390 70 485 75 570 140 L545 170 C460 115 390 120 325 190Z" fill="#090909"/>
+      <circle cx="665" cy="290" r="27" fill="#090909"/>
+      <path d="M645 318 Q665 305 685 318 L695 400 Q665 430 635 400Z" fill="#090909"/>
+      <path d="M642 332 Q590 295 535 315 L505 300 Q505 285 522 282 L610 300 Q638 302 655 320Z" fill="#090909"/>
+      <path d="M682 332 Q735 292 795 315 L825 300 Q830 286 813 282 L725 302 Q695 304 675 320Z" fill="#090909"/>
+      <path d="M650 395 L620 460 L648 465 L678 410 L700 468 L728 462 L692 395Z" fill="#090909"/>
+      <path d="M500 286 L560 270 L570 300 L512 315Z" fill="#090909"/>
+      <rect x="485" y="245" width="105" height="55" rx="4" fill="#090909"/>
+      <rect x="493" y="253" width="89" height="39" rx="2" fill="#f7e7bd"/>
+      <text x="537" y="279" text-anchor="middle" font-family="Poppins,sans-serif" font-size="15" font-weight="700" fill="#090909">HAPPY</text>
+      <text x="537" y="290" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" font-weight="700" fill="#090909">BIRTHDAY</text>
+      <path d="M486 300 L474 310 L492 315 L502 301Z" fill="#090909"/>
+    </svg>
+    <div class="message-card">
+      <p class="eyebrow">A MESSAGE FOR HER</p>
+      <div id="typedMessage" class="typed"></div><span class="cursor">|</span>
+      <button class="primary next afterMessage" data-next="4">Keep This Memory</button>
+    </div>
+  </section>
+
+  <section class="page card final-page" data-page="4">
+    <div class="heart">♡</div><p class="eyebrow">ONE LAST THING</p>
+    <h2>Thank You for Reading</h2>
+    <p>Thank you for spending a little moment here. I hope this small surprise made your birthday feel a little more special.</p>
+    <p class="script big">Wishing you a beautiful year ahead. 💙💗✨</p>
+    <button id="popBtn" class="primary">Make It Pop! 🎉</button>
+    <p id="finalMessage" class="script big"></p>
+  </section>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-box">
+  <div class="giant-cake">🎂</div><h2>Happy Birthday! ✨</h2>
+  <p>Your wish is officially sent into the universe.</p><p class="script big">Here’s to an amazing year ahead 💙</p>
+  <button id="closeModal" class="primary">Celebrate Again ✨</button>
+</div></div>
+<script src="script.js"></script>
+</body></html>
