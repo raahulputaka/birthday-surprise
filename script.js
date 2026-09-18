@@ -73,8 +73,8 @@ function openLetter(){
 
             volume += 0.005;
 
-            if(volume >= 0.18){
-                volume = 0.18;
+            if(volume >= 0.22){
+                volume = 0.22;
                 birthdayMusic.volume = volume;
                 clearInterval(fadeIn);
             }else{
