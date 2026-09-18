@@ -1,3 +1,11 @@
+// =============================
+// BIRTHDAY MUSIC
+// =============================
+
+const birthdayMusic = document.getElementById("birthdayMusic");
+
+birthdayMusic.volume = 0; // start silent
+
 const pages=[...document.querySelectorAll(".page")];
 function go(n){pages.forEach((p,i)=>p.classList.toggle("active",i===n)); if(n==4) startTyping();}
 document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",()=>{go(+b.dataset.next); if(+b.dataset.next===4) confetti(25)}));
@@ -48,32 +56,40 @@ const envelopeIntro =
   document.getElementById("envelopeIntro");
 
 
-function openLetter() {
+function openLetter(){
+    if(envelope.classList.contains("open")) return;
 
-  /* Prevent opening twice */
+    envelope.classList.add("open");
+    envelopeIntro.classList.add("opening");
 
-  if (envelope.classList.contains("open")) {
-    return;
-  }
+    // Start music quietly and fade it in
+    birthdayMusic.volume = 0;
 
+    birthdayMusic.play().then(() => {
 
-  /* Open envelope */
+        let volume = 0;
 
-  envelope.classList.add("open");
+        const fadeIn = setInterval(() => {
 
+            volume += 0.005;
 
-  /* Start small zoom animation */
+            if(volume >= 0.18){
+                volume = 0.18;
+                birthdayMusic.volume = volume;
+                clearInterval(fadeIn);
+            }else{
+                birthdayMusic.volume = volume;
+            }
 
-  envelopeIntro.classList.add("opening");
+        }, 100);
 
+    }).catch(error => {
+        console.log("Music could not start:", error);
+    });
 
-  /* Hide envelope and reveal website */
-
-  setTimeout(() => {
-
-    envelopeIntro.classList.add("hide");
-
-  }, 1600);
+    setTimeout(()=>{
+        envelopeIntro.classList.add("hide");
+    },1600);
 }
 
 
